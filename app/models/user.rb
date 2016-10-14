@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :favorites
-  has_many :restaurants, :through => :favorites
+  has_many :users_restaurants
+  has_many :restaurants, :through => :users_restaurants
 
 end

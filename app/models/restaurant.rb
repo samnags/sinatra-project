@@ -1,6 +1,6 @@
 class Restaurant < ActiveRecord::Base
-  has_many :favorites
-  has_many :users, through: :favorites
+  has_many :users_restaurants
+  has_many :users, through: :users_restaurants
 
 
 
