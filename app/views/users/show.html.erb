@@ -1,0 +1,7 @@
+
+  <%= @user.name %>
+  <% @user.restaurants.each do |restaurant| %>
+    <%= restaurant.name %>
+    <%= restaurant.rating %>
+    <%= restaurant.address %>
+  <% end %>
