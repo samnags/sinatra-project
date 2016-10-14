@@ -1,5 +1,6 @@
 require_relative 'config/environment'
 
-
+use UsersRestaurantsController
+use RestaurantsController
 use UsersController
 run ApplicationController

@@ -6,14 +6,18 @@ class UsersController < ApplicationController
     erb :'/users/index.html'
   end
 
-  def show
+  get '/users/new' do
+    erb :'/users/new.html'
+  end
+
   get '/users/:id' do
     @user = User.find(params[:id])
     erb :'/users/show.html'
   end
 
-  post 'users' do 
-    @user = User.new(params)
+  post '/users' do
+    @user = User.create(params)
+    redirect "/users/#{@user.id}"
   end
 
 

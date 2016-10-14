@@ -1,0 +1,23 @@
+<%= @restaurant.name %>
+  <ul>
+    <% @restaurant.users.each do |user| %>
+    <li>
+        <%= user.name %>
+    </li>
+  </ul>
+<% end %>
+
+<br />
+<br />
+
+<h4> Add To List of Restaurants to Try </h4>
+<form action="/restaurants/<%= @restaurant.id %>" method="POST">
+  <select name="users">
+    <% @users.each do |user| %>
+    <option>
+      <%= user.name %>
+    </option>
+    <% end %>
+  </select>
+  <input type="submit">
+</form>
