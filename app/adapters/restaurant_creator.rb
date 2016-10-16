@@ -5,8 +5,7 @@ module Adapters
     end
 
     def find_restaurant(args)
-       results = connection.query(city: args[:city], cuisine: args[:cuisine])
-       binding.pry
+       results = connection.query(city: args[:city], cuisine: args[:cuisine])       
     end
       # results = connection.query(city: params[:city], { term: params[:cuisine]} )
 

@@ -8,21 +8,11 @@ module Adapters
 
     def query(query = {})
       results = connection.search(query[:city], { term: query[:cuisine]})
+      restaurants = results.businesses
+      restaurant_objects = restaurants.map do |restaurant|
+        Restaurant.new(name: restaurant.name, rating: restaurant.rating, address: restaurant.location.display_address)
+      end
     end
 
   end
 end
-
-#
-# class RestaurantAdapter
-#
-#   attr_reader :city, :cuisine
-#
-#   def initialize(city, cuisine)
-#     binding.pry
-#     @city = city
-#     @cusine = cuisine
-#     response = Yelp.client.search()
-#   end
-#
-#
