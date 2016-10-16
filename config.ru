@@ -1,5 +1,6 @@
 require_relative 'config/environment'
 
+use YelpController
 use UsersRestaurantsController
 use RestaurantsController
 use UsersController
