@@ -1,20 +1,35 @@
-<%= @restaurant.name %>
+<header>
+  <a href="/restaurants/new">Add a Restaurant</a>
+  <a href="/users/new">Add a User</a>
+  <a href="/restaurants">See All Restaurants</a>
+  <a href="/users">See All Users</a>
+</header>
+
+<br />
+<br />
+
+Name: <%= @restaurant.name %><br />
+Rating: <%= @restaurant.rating %><br />
+Address: <%= @restaurant.address %><br /><br  />
+
+People who want to try<br />
   <ul>
     <% @restaurant.users.each do |user| %>
     <li>
         <%= user.name %>
     </li>
+    <% end %>
   </ul>
-<% end %>
+
 
 <br />
 <br />
 
 <h4> Add To List of Restaurants to Try </h4>
 <form action="/restaurants/<%= @restaurant.id %>" method="POST">
-  <select name="users">
+  <select name="users_id">
     <% @users.each do |user| %>
-    <option>
+    <option value="<%= user.id %>">
       <%= user.name %>
     </option>
     <% end %>

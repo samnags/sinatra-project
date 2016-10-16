@@ -1,6 +1,4 @@
 class RestaurantsController < ApplicationController
-
-
   get '/restaurants' do
     @restaurants = Restaurant.all
     erb :'/restaurants/index.html'
@@ -17,16 +15,16 @@ class RestaurantsController < ApplicationController
   end
 
   post '/restaurants/:id' do
-    binding.pry
+    restaurant = Restaurant.find(params[:id])
+    user = User.find(params[:users_id])
+    restaurant.users << user
+    restaurant.save
+    redirect "/restaurants/#{restaurant.id}"
   end
 
   post '/restaurants' do
     @restaurant = Restaurant.create(params)
     redirect "/restaurants/#{@restaurant.id}"
   end
-
-
-
-
 
 end

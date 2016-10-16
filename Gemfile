@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 # A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # gem "rails"
 gem 'sinatra-activerecord'
-gem "activerecord", "< 5.0.0"
+gem 'activerecord', '< 5.0.0'
 gem 'pry-byebug'
 gem 'sinatra'
 gem 'shotgun'
